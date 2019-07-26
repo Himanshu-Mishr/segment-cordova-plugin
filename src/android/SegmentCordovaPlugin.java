@@ -25,6 +25,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import com.segment.analytics.android.integrations.mixpanel.MixpanelIntegration;
+import com.segment.analytics.android.integrations.moengage.MoEngageIntegration;
 
 public class SegmentCordovaPlugin extends CordovaPlugin {
 
@@ -135,6 +136,10 @@ public class SegmentCordovaPlugin extends CordovaPlugin {
                     if (obj.has("enableMixpanelIntegration")) {
                         builder.use(MixpanelIntegration.FACTORY);
                     }
+
+                    // MoEngage Integration
+                    builder.use(MoEngageIntegration.FACTORY);
+
                     // middleware, connectionFactory, optOut are not currently supported.
                 }
 

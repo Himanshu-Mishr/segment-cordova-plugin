@@ -1,6 +1,7 @@
 #import "SegmentCordovaPlugin.h"
 
 #import <Segment-Mixpanel/SEGMixpanelIntegrationFactory.h>
+#import <Segment-MoEngage/SEGMoEngageIntegrationFactory.h>
 
 @implementation SegmentCordovaPlugin
 
@@ -66,6 +67,9 @@
                 if ([configOptions objectForKey:@"enableMixpanelIntegration"] != nil) {
                     [configuration use:[SEGMixpanelIntegrationFactory instance]];
                 }
+
+                // Moengage Integration
+                [configuration use:[SEGMoEngageIntegrationFactory instance]];
             }
         }
 
